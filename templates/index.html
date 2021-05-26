@@ -1,0 +1,42 @@
+{% block content %}
+    <form method="POST">
+        <div>
+            <input name="name" placeholder="Name">
+        </div>
+        <div>
+            <input name="company" placeholder="Company">
+        </div>
+        <div>
+            <input name="cost" placeholder="cost">
+        </div>
+        <button>Post</button>
+    </form>
+
+    <form method="POST">
+        <div>
+            <input name="idDelete">
+        </div>
+        <button>Delete</button>
+    </form>
+
+    <h1> Order list </h1>
+
+    <table>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Company</th>
+            <th scope="col">Cost</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <th scope="row">{{ item[0] }}</th>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
